@@ -6,3 +6,5 @@ It is possible to choose which challenge to run, see it's output and compare it 
 For each challenge there is a solution file, and an input and an expected output .txt files that were taken from HackerRank.
 
 **_Note: It still is in a very early development stage._**
+
+1 - Divisible Sum Pairs - https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
