@@ -9,11 +9,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import com.hackerrankjava.divisiblesumpairs.DivisibleSumPairs;
+import com.hackerrankjava.sparsearrays.SparseArrays;
 
 //TODO: Cleanup code, enough experiments and messy stuff! :)
 public class App {
 
-    private static String relativePath =  "./HackerRankJava/hackerrankjava/src/main/java/com/hackerrankjava";
+    private static String relativePath =  "./hackerrankjava/src/main/java/com/hackerrankjava"; //FIXME: Ge current path and not static value
 
     public static void main(String[] args) throws InterruptedException, IOException {
         
@@ -51,6 +52,20 @@ public class App {
 
                     System.out.println("\nExpected Output:");
                     File outputFile = new File(getRelativePath() + '/' + challenges.get(Constants.DIVISIBLE_SUM_PAIRS[0]) + "/expected_output.txt");
+                    Scanner outputFileScanner = new Scanner(outputFile);
+
+                    while (outputFileScanner.hasNextLine()) {
+                        System.out.println(outputFileScanner.nextLine());
+                    }
+                    System.out.println();
+                    outputFileScanner.close();
+                } else if (Arrays.stream(Constants.SPARSE_ARRAYS).anyMatch(selectedChallenge::equals)) {
+                    System.out.println("\n" + Constants.SPARSE_ARRAYS[0] + " Output:");
+                    System.setIn(new FileInputStream(new File(getRelativePath() + '/' + challenges.get(Constants.SPARSE_ARRAYS[0]) + "/input.txt")));
+                    SparseArrays.main(args);
+
+                    System.out.println("\nExpected Output:");
+                    File outputFile = new File(getRelativePath() + '/' + challenges.get(Constants.SPARSE_ARRAYS[0]) + "/expected_output.txt");
                     Scanner outputFileScanner = new Scanner(outputFile);
 
                     while (outputFileScanner.hasNextLine()) {
@@ -126,6 +141,7 @@ public class App {
     }
 
     private static String[] getDirectories() {
+        System.out.println(getRelativePath());
         File directory = new File(getRelativePath());
         String[] list = directory.list(new FilenameFilter(){
             public boolean accept(File current, String name) {
