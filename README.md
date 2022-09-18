@@ -8,3 +8,4 @@ For each challenge there is a solution file, and an input and an expected output
 **_Note: It still is in a very early development stage._**
 
 1 - Divisible Sum Pairs - https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+2 - Sparse Arrays - https://www.hackerrank.com/challenges/sparse-arrays/problem
